@@ -16,11 +16,4 @@ export class FileUploaderController {
   uploadFile(@UploadedFile() file: Express.Multer.File) {
     return this.fileUploaderService.uploadFile(file);
   }
-
-  @Post('chunk-upload')
-  @UseInterceptors(FileInterceptor('file')) // form data key
-  uploadChunkFile(@UploadedFile() file: Express.Multer.File) {
-    console.log(file);
-    // return this.fileUploaderService.uploadFile(file);
-  }
 }
