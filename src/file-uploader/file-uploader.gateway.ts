@@ -38,7 +38,7 @@ export class FileUploaderGateway
 
   @SubscribeMessage('upload-start')
   uploadStart(@MessageBody() { name, size }: { name: string; size: number }) {
-    // console.log('upload-start', name, size);
+    console.log('upload-start', name, size);
     const filePath = join(process.cwd(), 'uploads', name);
     this.writeStream = createWriteStream(filePath);
     return 'start';
